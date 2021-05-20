@@ -55,21 +55,20 @@ body {
 
 header {
     background-color: #009688;
-    height: 70px;
     padding-top: 10px;
 }
 
 #user,
 #chat_menu {
     background-color: #EAEAEA;
-    height: 60px;
 }
 
 /* User */
 
 #user {
-    width: 32%;
+    width: 30%;
     border-right: 1px solid #D8D8D8;
+    text-align: center;
 }
 
 .user_name,
@@ -107,7 +106,7 @@ header {
 /* Chat Menu */
 
 #chat_menu {
-    width: 68%;
+    width: 70%;
     justify-content: space-between;
 }
 
@@ -146,9 +145,9 @@ header {
 /* Left Nav */
 
 .left_nav {
-    width: 32%;
-    height: 300px;
-    background-color: green;
+    width: 30%;
+    height: 80vh;
+    background-color: #FAFAFA;
 }
 
 .notify {
@@ -156,40 +155,71 @@ header {
     background-color: #8EDAFC;
 }
 
-.contacts {
-    background-color: #FAFAFA;
-    height: 240px;
-}
-
 .notify>.fa-bell-slash {
     color: #8EDAFC;
-    /* color: black; */
     padding: 0.8rem 0.7rem;
     background-color: white;
     border-radius: 50%;
-    font-size: 1.3rem;
-    margin: 0.5rem;
+    font-size: 2rem;
+    margin: 1rem 0.5rem;
 }
 
 .notify div>span {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-weight: 400;
     width: 100%;
     display: block;
 }
 
 .notify div>a {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: #6B7376;
 }
+
+/* Contacts */
+.contacts {
+    background-color: #FAFAFA;
+    position: relative;
+}
+
+.contacts input {
+    width: calc(100% - 0.8rem);
+    height: 2.5rem;
+    margin: 0.4rem;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    padding: 0.7rem 0.5rem 0.7rem 2.5rem;
+}
+
+.contacts .fa-search {
+    color: #6B7376;
+    position: absolute;
+    top: 1.2rem;
+    left: 1.3rem;
+}
+
+.contacts input::placeholder {
+    padding-left: 0.5rem;
+
+}
+
+.contacts_list {
+    width: 100%;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+
+/* /Contacts */
 
 /* /Left Nav */
 
 /* Chat */
 
 .chat {
-    width: 68%;
-    height: 300px;
+    width: 70%;
+    height: 80vh;
     position: relative;
 }
 
@@ -214,6 +244,7 @@ header {
     height: 2.8rem;
     border-radius: 0.4rem;
     border: none;
+    padding-left: 1.5rem;
 }
 
 .text_input input::placeholder {
@@ -234,3 +265,18 @@ header {
 /***********
  /MAIN 
  ************/
+
+/***********
+  MESSAGE 
+  ************/
+.sent {
+    background-color: #D5F9BA;
+}
+
+.received {
+    background-color: white;
+}
+
+/***********
+  /MESSAGE 
+  ************/
