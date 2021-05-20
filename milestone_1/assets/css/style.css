@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+
+/***********
+ UTILITY 
+ ***********/
+
+.container {
+    width: 70%;
+    margin: auto;
+}
+
+.d_flex {
+    display: flex;
+}
+
+.justify_center {
+    justify-content: center;
+}
+
+.center_middle {
+    justify-content: center;
+    align-items: center;
+}
+
+.center_around {
+    justify-content: space-around;
+    align-items: center;
+}
+
+.center_between {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.f_column {
+    flex-direction: column;
+}
+
+/***********
+ /UTILITY 
+ ***********/
+
+/***********
+ HEADER 
+ ***********/
+
+header {
+    background-color: #009688;
+    height: 70px;
+    padding-top: 10px;
+}
+
+#user,
+#chat_menu {
+    background-color: #EAEAEA;
+    height: 60px;
+}
+
+/* User */
+
+#user {
+    width: 32%;
+    border-right: 1px solid #D8D8D8;
+}
+
+.user_name,
+.chat_menu {
+    width: 60%;
+    justify-content: left;
+    align-items: center;
+    padding: 0.3rem;
+}
+
+
+.user_name img {
+    width: 30%;
+    border-radius: 50%;
+}
+
+.user_icon {
+    width: 40%;
+}
+
+.user_icon i,
+.chat_icon i {
+    color: #6B7376;
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+#user span {
+    font-size: 0.9rem;
+    padding-left: 0.3rem;
+}
+
+/* /User */
+
+/* Chat Menu */
+
+#chat_menu {
+    width: 68%;
+    justify-content: space-between;
+}
+
+.chat_menu img {
+    width: 13%;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.chat_icon {
+    justify-content: right;
+    margin-right: 1rem;
+}
+
+.contact_name {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.accesso {
+    font-size: 0.7rem;
+    color: #6B7376;
+}
+
+/* /Chat Menu */
+
+
+/***********
+ /HEADER 
+ ***********/
+
+/***********
+ MAIN 
+ ************/
+
+/* Left Nav */
+
+.left_nav {
+    width: 32%;
+    height: 300px;
+    background-color: green;
+}
+
+.notify {
+    width: 100%;
+    background-color: #8EDAFC;
+}
+
+.contacts {
+    background-color: #FAFAFA;
+    height: 240px;
+}
+
+.notify>.fa-bell-slash {
+    color: #8EDAFC;
+    /* color: black; */
+    padding: 0.8rem 0.7rem;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    margin: 0.5rem;
+}
+
+.notify div>span {
+    font-size: 0.9rem;
+    font-weight: 400;
+    width: 100%;
+    display: block;
+}
+
+.notify div>a {
+    font-size: 0.7rem;
+    color: #6B7376;
+}
+
+/* /Left Nav */
+
+/* Chat */
+
+.chat {
+    width: 68%;
+    height: 300px;
+    position: relative;
+}
+
+.chat_view {
+    width: 100%;
+    height: calc(100% - 60px);
+    background-image: url('../img/mine.jpg');
+    overflow-y: scroll;
+}
+
+.text_input {
+    height: 60px;
+    width: 100%;
+    background-color: #F3EEEA;
+    position: absolute;
+    bottom: 0;
+}
+
+.text_input input {
+    margin: 0.5rem;
+    width: 80%;
+    height: 2.8rem;
+    border-radius: 0.4rem;
+    border: none;
+}
+
+.text_input input::placeholder {
+    padding-left: 1rem;
+}
+
+.text_input>.fas,
+.text_input>.far {
+    color: #6B7376;
+    margin: 0 0.8rem;
+    font-size: 1.5rem;
+}
+
+/* /Chat */
+
+
+
+/***********
+ /MAIN 
+ ************/
