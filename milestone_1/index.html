@@ -30,8 +30,8 @@
                 <div id="user" class="d_flex center_middle">
                     <div class="user_name d_flex">
 
-                        <img src="./assets/img/avatar_io.jpg" alt="">
-                        <span>User Name</span>
+                        <img :src="'./assets/img/avatar'+ user.avatar +'.jpg'" alt="">
+                        <span>{{ user.name }}</span>
 
                     </div>
 
@@ -101,6 +101,25 @@
                 <!-- Chat -->
                 <div class="chat">
                     <div class="chat_view">
+                        <div v-for="(item, index) in contacts" v-if="index === contactCounter">
+                            <!-- {{ item.messages[0].text }} -->
+                            <div v-for="(item, index) in item.messages" v-if="item.status === 'sent'" class="message d_flex ">
+                                <div class="sent">
+                                    {{ item.text }}  
+                                    <div>
+                                        {{ item.date }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div  v-else-if="item.status === 'received'" class="message d_flex">
+                                <span class="received">
+                                    {{ item.text }}  
+                                    <div>
+                                        {{ item.date }}
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
 
                     </div>
 

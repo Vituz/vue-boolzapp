@@ -4,6 +4,13 @@ const app = new Vue({
 
     data:{
         contactCounter: 0,
+        // sent: true,
+
+        user:{
+            name: 'Vituz',
+            avatar: '_io',
+        },
+
         contacts: [
             {
                 name: 'Michele',
@@ -97,5 +104,5 @@ const app = new Vue({
             this.contactCounter = index;
             console.log(this.contactCounter);
         }
-    }
+    },
 });
