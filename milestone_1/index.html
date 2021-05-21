@@ -90,7 +90,11 @@
                     </div>
 
                     <div class="contacts_list">
-                        
+                        <div  v-for="(contact, index) in contacts" key="name">
+                            <img :src="'./assets/img/avatar'+contact.avatar.jpg" alt="">
+                            <span>{{ contact.name }} - {{contact.avatar}}</span>
+                            <hr>
+                        </div>
                     </div>
                 </nav>
 

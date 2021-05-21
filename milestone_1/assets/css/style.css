@@ -208,6 +208,30 @@ header {
     width: 100%;
     background-color: white;
     overflow-y: scroll;
+    height: calc(100% - 8.9rem);
+}
+
+.contacts_list>div {
+    width: 100%;
+    padding-top: 1rem;
+    vertical-align: top;
+}
+
+.contacts_list img {
+    width: 18%;
+    border-radius: 50%;
+    margin: 0 0.7rem 0.7rem 0.7rem;
+}
+
+.contacts_list span {
+    font-size: 1.3rem;
+    margin: 1rem;
+    vertical-align: top;
+}
+
+.contacts_list hr {
+    background-color: #FAFAFA;
+    border: 1px solid #FAFAFA;
 }
 
 
