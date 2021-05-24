@@ -7,6 +7,7 @@
 body {
     font-family: Roboto, sans-serif;
     min-width: 1600px;
+    background-color: #D4DBDA;
 }
 
 
@@ -252,6 +253,9 @@ header {
     border: 1px solid #FAFAFA;
 }
 
+.active {
+    background-color: lightgray;
+}
 
 /* /Contacts */
 
@@ -314,9 +318,8 @@ header {
   MESSAGE 
   ************/
 .message {
-    width: 100%;
-    height: 4rem;
-    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .sent,
@@ -325,6 +328,7 @@ header {
     border-radius: 0.5rem;
     vertical-align: middle;
     min-width: 12rem;
+    width: fit-content;
     padding: 1rem;
 }
 
@@ -332,21 +336,21 @@ header {
 .sent {
     text-align: right;
     background-color: #D5F9BA;
-    left: 34rem;
+    align-self: flex-end;
+    margin: 1rem 7rem 1rem 1rem;
 }
 
 .received {
     background-color: white;
-    left: 6rem;
+    align-self: flex-start;
+    margin: 1rem 1rem 1rem 7rem;
 }
 
 .sent>div,
 .received>div {
-    position: absolute;
-    right: 1rem;
     font-size: 0.7rem;
-    bottom: 0.5rem;
     color: #6B7376;
+    margin: 0.5rem 0;
 }
 
 

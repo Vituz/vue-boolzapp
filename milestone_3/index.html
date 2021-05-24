@@ -91,7 +91,7 @@
 
                     <!-- Contact List -->
                     <div class="contacts_list">
-                        <div v-for="(contact, index) in contacts" :key="contact.name" @click="selectContact(index)">
+                        <div v-for="(contact, index) in contacts" :key="contact.name" @click="selectContact(index)" :class="contactCounter === index ? 'active' : '' ">
                             <img :src="'./assets/img/avatar'+contact.avatar +'.jpg'" alt="">
                             <span class="list_name">{{ contact.name }}</span>
                             <!-- <span> {{ contact.messages[0].text }} </span> -->
@@ -104,28 +104,16 @@
                 <!-- Chat -->
                 <div class="chat">
                     <div class="chat_view">
-                        <div v-for="(item, index) in contacts" v-if="index === contactCounter">
+                        <div v-for="(item, index) in contacts" v-if="index === contactCounter" class="message">
                             <!-- {{ item.messages[0].text }} -->
 
-                            <!-- Message Sent -->
-                            <div v-for="(item, index) in item.messages" v-if="item.status === 'sent'" class="message d_flex ">
-                                <div class="sent">
-                                    {{ item.text }}  
-                                    <div>
-                                        {{ item.date }}
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Message Received -->
-                            <div  v-else-if="item.status === 'received'" class="message d_flex">
-                                <span class="received">
-                                    {{ item.text }}  
-                                    <div>
-                                        {{ item.date }}
-                                    </div>
-                                </span>
-                            </div>
+                            <!-- Sent - Received Messages -->
+                            <div v-for="(item, index) in item.messages" :class="item.status === 'sent' ? 'sent' : 'received'">
+                                {{ item.text }}  
+                                <div>
+                                    {{ item.date }}  
+                                </div>        
+                            </div>                            
                         </div>
 
                     </div>

@@ -110,7 +110,6 @@ const app = new Vue({
 
         sendMessage(){
             
-            
             this.messages.push({
                 date: 'gennaio',
                 text: this.message,
@@ -119,7 +118,7 @@ const app = new Vue({
             //     messages.push({
             // })]
 
-            // this.message = "";
+            this.message = "";
 
         }
     },
