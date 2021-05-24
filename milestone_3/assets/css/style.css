@@ -327,7 +327,7 @@ header {
     position: relative;
     border-radius: 0.5rem;
     vertical-align: middle;
-    min-width: 12rem;
+    min-width: 5rem;
     width: fit-content;
     padding: 1rem;
 }

@@ -110,17 +110,28 @@ const app = new Vue({
 
         sendMessage(){
             
-            this.messages.push({
+            this.contacts[this.contactCounter].messages.push({
                 date: 'gennaio',
                 text: this.message,
                 status: 'sent'
-            })
-            //     messages.push({
-            // })]
+            });
 
+            setTimeout(()=>{
+                this.sendResponse();
+            }, 2000);
+           
             this.message = "";
 
+        },
+
+        sendResponse(){
+            this.contacts[this.contactCounter].messages.push({
+                date: 'gennaio',
+                text: 'Ok!',
+                status: 'received'
+            });
         }
+        
     },
 
 
