@@ -330,13 +330,14 @@ header {
 
 
 .sent {
+    text-align: right;
     background-color: #D5F9BA;
-    left: 30rem;
+    left: 34rem;
 }
 
 .received {
     background-color: white;
-    left: 8rem;
+    left: 6rem;
 }
 
 .sent>div,
