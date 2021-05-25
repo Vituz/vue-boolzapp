@@ -7,7 +7,11 @@ const app = new Vue({
         
         message:'',
 
-        index: 1,
+        showDate:'',
+
+        lastAccess: '',
+
+        searchContact: null,
 
         user:{
             name: 'Vituz',
@@ -23,7 +27,7 @@ const app = new Vue({
                     {
                         date: '10/01/2020 15:30:55',
                         text: 'Hai portato a spasso il cane?',
-                        status: 'sent'
+                        status: 'sent',
                     },
                     {
                         date: '10/01/2020 15:50:00',
@@ -108,15 +112,22 @@ const app = new Vue({
             console.log(this.contactCounter);
         },
 
+        currentDate(){
+            let curDate = new Date();
+            this.showDate = curDate.toLocaleString();
+            console.log(this.showDate);
+        },
+
         sendMessage(){
-            
+            this.currentDate();
             this.contacts[this.contactCounter].messages.push({
-                date: 'gennaio',
+                date: this.showDate,
                 text: this.message,
                 status: 'sent'
             });
 
             setTimeout(()=>{
+                this.currentDate();
                 this.sendResponse();
             }, 2000);
            
@@ -125,20 +136,44 @@ const app = new Vue({
         },
 
         sendResponse(){
+
             this.contacts[this.contactCounter].messages.push({
-                date: 'gennaio',
+                date: this.showDate,
                 text: 'Ok!',
-                status: 'received'
+                status: 'received',
             });
+
+            // this.lastAccess = this.showDate;
+            // console.log("ultimo accesso" + this.lastAccess);
+        },
+
+        findContacts(nomeContatto){
+            return nomeContatto = this.searchContact;
         }
+
         
+
     },
 
+    mounted(){
+        this.currentDate();
+        
+        console.log(this.searchContact);
+    }, 
 
 
     computed:{
 
-      
-        
-    }
+        newContacts(){
+            if(this.searchContact){
+                return this.contacts.filter(cName => {
+                    return this.searchContact.toLowerCase().split("").every(v => cName.name.toLowerCase().includes(v));
+                });
+            } else {
+                return this.contacts;
+            }
+        }
+
+    },
+
 });
