@@ -111,7 +111,18 @@
                             <!-- Sent - Received Messages -->
                             <div v-for="(item, index) in item.messages" :class="item.status === 'sent' ? 'sent' : 'received'">
                                 {{ item.text }}  
-                                <div>
+                                <i class="fas fa-angle-down" @click="openMessageMenu(index)"></i> 
+                                <div class="message_menu" :class="item.menu ? 'd_none' : ''" >
+                                    <ul>
+                                        <li>
+                                            <a href="#">Info messaggio</a> 
+                                        </li>
+                                        <li>
+                                            <a href="#" @click="deleteMessage(index)">Elimina messaggio</a> 
+                                        </li>
+                                    </ul>
+                                </div>                             
+                                <div class="message_date">
                                     {{ item.date }}  
                                 </div>        
                             </div>                            

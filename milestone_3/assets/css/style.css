@@ -47,6 +47,10 @@ body {
     flex-direction: column;
 }
 
+.d_none {
+    display: none;
+}
+
 /***********
  /UTILITY 
  ***********/
@@ -283,6 +287,7 @@ header {
     background-color: #F3EEEA;
     position: absolute;
     bottom: 0;
+    z-index: 2;
 }
 
 .text_input input {
@@ -338,27 +343,65 @@ header {
     background-color: #D5F9BA;
     align-self: flex-end;
     margin: 1rem 7rem 1rem 1rem;
+    position: relative;
 }
 
 .received {
     background-color: white;
     align-self: flex-start;
     margin: 1rem 1rem 1rem 7rem;
+    position: relative;
 }
 
-.sent>div,
-.received>div {
+.sent>.message_date,
+.received>.message_date {
     font-size: 0.7rem;
     color: #6B7376;
     margin: 0.5rem 0;
 }
 
+.sent:hover .fa-angle-down,
+.received:hover .fa-angle-down {
+    display: block;
+    cursor: pointer;
+}
+
+.fa-angle-down {
+    color: #6B7376;
+    display: none;
+    position: absolute;
+    top: 0.2rem;
+    right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.message_menu {
+    z-index: 1;
+    width: 11rem;
+    position: absolute;
+    top: 1.5rem;
+    right: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    padding: 0.4rem;
+    text-align: left;
+}
+
+.message_menu ul {
+    list-style: none;
+}
+
+.message_menu li {
+    padding: 0.7rem;
+}
+
+.message_menu a {
+    text-decoration: none;
+    color: black;
+}
+
+/* .fa-angle-down: */
 
 /***********
   /MESSAGE 
   ************/
-
-
-.nascondi {
-    display: none;
-}
