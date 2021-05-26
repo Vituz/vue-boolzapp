@@ -50,8 +50,9 @@
                         <img :src="'./assets/img/avatar' + contacts[contactCounter].avatar + '.jpg'" :key="contacts.avatar" alt="">
                         <div class="d_flex f_column">
                             <span class="contact_name">{{ contacts[contactCounter].name }}</span>
-                            <span class="accesso" v-if="contacts[contactCounter].name === 'Michele'">Ultimo accesso oggi {{ contacts[contactCounter].contactStatus }} </span>
-                            <span class="accesso" v-else>Online</span>
+                            <span :class="contacts[contactCounter].contatcStatus === 'Online' ? 'c_blue' : 'accesso' ">
+                                {{ contacts[contactCounter].contatcStatus }} 
+                            </span>
                         </div>
 
                     </div>
@@ -92,9 +93,10 @@
 
                     <!-- Contact List -->
                     <div class="contacts_list">
-                        <div v-for="(contact, index) in contacts" :key="contact.name" @click="selectContact(index)" :class="contactCounter === index ? 'active' : ''" >
+                        <div v-for="(contact, index) in newContacts" :key="contact.name" @click="selectContact(index)" :class="contactCounter === index ? 'active' : ''" >
                             <img :src="'./assets/img/avatar'+contact.avatar +'.jpg'" alt="">
                             <span class="list_name">{{ contact.name }}</span>
+                            <span class="date"> {{ contact.messages[contact.messages.length -1].date }} </span>
                             <span class="last_message text_space"> {{ contact.messages[contact.messages.length -1].text }}</span>
                             <hr>
                         </div>
@@ -109,7 +111,18 @@
 
                             <!-- Sent - Received Messages -->
                             <div v-for="(item, index) in item.messages" :class="item.status === 'sent' ? 'sent' : 'received'">
-                                {{ item.text }}
+                                {{ item.text }}  
+                                <i class="fas fa-angle-down" @click="openMessageMenu(index)"></i> 
+                                <div class="message_menu" :class="item.menu ? 'd_none' : ''" >
+                                    <ul>
+                                        <li>
+                                            <a href="#">Info messaggio</a> 
+                                        </li>
+                                        <li>
+                                            <a href="#" @click="deleteMessage(index)">Elimina messaggio</a> 
+                                        </li>
+                                    </ul>
+                                </div>                             
                                 <div class="message_date">
                                     {{ item.date }}  
                                 </div>        

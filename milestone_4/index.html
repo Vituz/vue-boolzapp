@@ -92,7 +92,7 @@
 
                     <!-- Contact List -->
                     <div class="contacts_list">
-                        <div v-for="(contact, index) in contacts" :key="contact.name" @click="selectContact(index)" :class="contactCounter === index ? 'active' : ''" >
+                        <div v-for="(contact, index) in newContacts" :key="contact.name" @click="selectContact(index)" :class="contactCounter === index ? 'active' : ''" >
                             <img :src="'./assets/img/avatar'+contact.avatar +'.jpg'" alt="">
                             <span class="list_name">{{ contact.name }}</span>
                             <span class="last_message text_space"> {{ contact.messages[contact.messages.length -1].text }}</span>
@@ -109,7 +109,7 @@
 
                             <!-- Sent - Received Messages -->
                             <div v-for="(item, index) in item.messages" :class="item.status === 'sent' ? 'sent' : 'received'">
-                                {{ item.text }}
+                                {{ item.text }}                       
                                 <div class="message_date">
                                     {{ item.date }}  
                                 </div>        
