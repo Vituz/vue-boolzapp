@@ -185,6 +185,9 @@ const app = new Vue({
             let message = this.contacts[this.contactCounter].messages[index].menu;
             
             if(message){
+                setTimeout(()=>{
+                    this.contacts[this.contactCounter].messages[index].menu = true;
+                }, 8000);
                 return this.contacts[this.contactCounter].messages[index].menu = false;
             } else {
                 return this.contacts[this.contactCounter].messages[index].menu = true;
