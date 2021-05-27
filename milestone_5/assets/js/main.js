@@ -6,8 +6,9 @@ const app = new Vue({
         contactCounter: 0,
         message:'',
         showDate:'',
-        searchContact: null,
+        // searchContact: null,
         messageCounter: 0,
+        searchString:'',
 
         user:{
             name: 'Vituz',
@@ -194,30 +195,58 @@ const app = new Vue({
             }
         },
 
+        searchContact(search){
+            const searchLower = search.toLowerCase();
+            // console.log(searchLower);
+            this.contacts.forEach((contact)=>{
+                const nameLower = contact.name.toLowerCase();
+                
+                if(nameLower.includes(searchLower)){
+                    contact.visible = true;
+                } else {
+                    contact.visible = false;
+                }
+
+                return contact;
+
+            });
+
+        },
+
         findContacts(nomeContatto){
             return nomeContatto = this.searchContact;
-        }
+        },
     },
 
     mounted(){
         this.currentDate();
         
-        console.log(this.searchContact);
+        // console.log(this.searchContact);
     }, 
 
 
-    computed:{
+    // computed:{
 
-        newContacts(){
-            if(this.searchContact){
-                return this.contacts.filter(cName => {
-                    return this.searchContact.toLowerCase().split("").every(v => cName.name.toLowerCase().includes(v));
-                });
-            } else {
-                return this.contacts;
-            }
-        }
+    //     newContacts(){
+    //         if(this.searchContact){
+    //             return this.contacts.filter(cName => {
+    //                 return this.searchContact.toLowerCase().split("").every(v => cName.name.toLowerCase().includes(v));
+    //             });
+    //         } else {
+    //             return this.contacts;
+    //         }
+    //     }
 
-    },
+    // },
 
 });
+
+
+/*
+- @keyup
+- v.model
+
+- Metodo searchContact
+    -
+
+*/
